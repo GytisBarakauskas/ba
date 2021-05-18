@@ -6,8 +6,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.gytisdev.bahometask.application.common.OutcomeConverter
 import com.gytisdev.bahometask.application.common.TaskStatus
-import com.gytisdev.bahometask.postdetails.data.PostDetails
-import com.gytisdev.bahometask.postdetails.data.User
+import com.gytisdev.bahometask.postdetails.data.model.PostDetails
+import com.gytisdev.bahometask.postdetails.data.model.User
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.collect

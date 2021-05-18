@@ -2,8 +2,8 @@ package com.gytisdev.bahometask
 
 import com.gytisdev.bahometask.application.networkBoundResource
 import com.gytisdev.bahometask.application.storage.DatabaseUser
-import com.gytisdev.bahometask.network.models.NetworkUser
-import com.gytisdev.bahometask.postdetails.data.User
+import com.gytisdev.bahometask.network.model.NetworkUser
+import com.gytisdev.bahometask.postdetails.data.model.User
 import io.mockk.*
 import io.mockk.impl.annotations.MockK
 import kotlinx.coroutines.flow.*

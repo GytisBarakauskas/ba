@@ -1,4 +1,4 @@
-package com.gytisdev.bahometask.network.models
+package com.gytisdev.bahometask.network.model
 
 import com.gytisdev.bahometask.application.storage.DatabaseUser
 import kotlinx.serialization.Serializable

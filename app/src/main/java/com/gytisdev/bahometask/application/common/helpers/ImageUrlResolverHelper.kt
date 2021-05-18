@@ -1,4 +1,4 @@
-package com.gytisdev.bahometask.application.common
+package com.gytisdev.bahometask.application.common.helpers
 
 object ImageUrlResolverHelper {
 

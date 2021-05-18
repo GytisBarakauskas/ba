@@ -2,7 +2,7 @@ package com.gytisdev.bahometask.application.di
 
 import android.content.Context
 import androidx.room.Room
-import com.gytisdev.bahometask.application.storage.AppDatabase
+import com.gytisdev.bahometask.application.data.AppDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.Reusable

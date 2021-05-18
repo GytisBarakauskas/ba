@@ -5,6 +5,9 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.gytisdev.bahometask.application.data.AppDatabase
+import com.gytisdev.bahometask.application.data.PostsDao
+import com.gytisdev.bahometask.application.data.UsersDao
 import com.gytisdev.bahometask.application.storage.*
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking

@@ -4,8 +4,8 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.widget.FrameLayout
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.gytisdev.bahometask.application.common.AnimationHelper.createFadeInAnimation
-import com.gytisdev.bahometask.application.common.AnimationHelper.createFadeOutAnimation
+import com.gytisdev.bahometask.application.common.helpers.AnimationHelper.createFadeInAnimation
+import com.gytisdev.bahometask.application.common.helpers.AnimationHelper.createFadeOutAnimation
 import com.gytisdev.bahometask.databinding.ViewPostsBinding
 import com.gytisdev.bahometask.posts.data.MainPostsAdapter
 import com.gytisdev.bahometask.posts.data.model.Post

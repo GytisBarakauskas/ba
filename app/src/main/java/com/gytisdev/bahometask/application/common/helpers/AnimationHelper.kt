@@ -1,4 +1,4 @@
-package com.gytisdev.bahometask.application.common
+package com.gytisdev.bahometask.application.common.helpers
 
 import android.view.animation.AccelerateInterpolator
 import android.view.animation.AlphaAnimation

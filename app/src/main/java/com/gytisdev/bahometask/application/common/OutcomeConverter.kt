@@ -1,5 +1,6 @@
 package com.gytisdev.bahometask.application.common
 
+import com.gytisdev.bahometask.application.common.helpers.ErrorHelper
 import javax.inject.Inject
 import javax.inject.Singleton
 

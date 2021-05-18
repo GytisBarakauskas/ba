@@ -1,4 +1,4 @@
-package com.gytisdev.bahometask.postdetails.data
+package com.gytisdev.bahometask.postdetails.data.model
 
 data class PostDetails(
     val title: String,

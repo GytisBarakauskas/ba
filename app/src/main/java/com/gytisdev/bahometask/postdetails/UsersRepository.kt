@@ -1,10 +1,10 @@
 package com.gytisdev.bahometask.postdetails
 
 import com.gytisdev.bahometask.application.networkBoundResource
-import com.gytisdev.bahometask.application.storage.UsersDao
+import com.gytisdev.bahometask.application.data.UsersDao
 import com.gytisdev.bahometask.application.storage.toDomainModel
 import com.gytisdev.bahometask.network.PostsApiService
-import com.gytisdev.bahometask.network.models.toDatabaseModel
+import com.gytisdev.bahometask.network.model.toDatabaseModel
 import javax.inject.Inject
 import javax.inject.Singleton
 

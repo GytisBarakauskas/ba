@@ -7,10 +7,10 @@ import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.facebook.shimmer.ShimmerFrameLayout
-import com.gytisdev.bahometask.application.common.ImageUrlResolverHelper
+import com.gytisdev.bahometask.application.common.helpers.ImageUrlResolverHelper
 import com.gytisdev.bahometask.databinding.ViewPostDetailsBinding
-import com.gytisdev.bahometask.postdetails.data.PostDetails
-import com.gytisdev.bahometask.postdetails.data.User
+import com.gytisdev.bahometask.postdetails.data.model.PostDetails
+import com.gytisdev.bahometask.postdetails.data.model.User
 
 class PostDetailsView(context: Context) : FrameLayout(context) {
 

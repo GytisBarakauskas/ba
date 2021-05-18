@@ -1,4 +1,4 @@
-package com.gytisdev.bahometask.postdetails.data
+package com.gytisdev.bahometask.postdetails.data.model
 
 data class User(
     val id: Int,

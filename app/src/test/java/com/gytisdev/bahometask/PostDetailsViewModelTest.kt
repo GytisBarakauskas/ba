@@ -8,7 +8,7 @@ import com.gytisdev.bahometask.application.common.TaskStatus
 import com.gytisdev.bahometask.postdetails.PostDetailsRepository
 import com.gytisdev.bahometask.postdetails.PostDetailsViewModel
 import com.gytisdev.bahometask.postdetails.UsersRepository
-import com.gytisdev.bahometask.postdetails.data.User
+import com.gytisdev.bahometask.postdetails.data.model.User
 import com.gytisdev.bahometask.utils.getOrAwaitValue
 import io.mockk.MockKAnnotations
 import io.mockk.every

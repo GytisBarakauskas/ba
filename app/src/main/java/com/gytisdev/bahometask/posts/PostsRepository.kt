@@ -2,10 +2,10 @@ package com.gytisdev.bahometask.posts
 
 import com.gytisdev.bahometask.application.networkBoundResource
 import com.gytisdev.bahometask.application.preferences.SyncPreferences
-import com.gytisdev.bahometask.application.storage.PostsDao
+import com.gytisdev.bahometask.application.data.PostsDao
 import com.gytisdev.bahometask.application.storage.toDomainModel
 import com.gytisdev.bahometask.network.PostsApiService
-import com.gytisdev.bahometask.network.models.toDatabaseModel
+import com.gytisdev.bahometask.network.model.toDatabaseModel
 import javax.inject.Inject
 
 class PostsRepository @Inject constructor(

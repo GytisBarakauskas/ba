@@ -1,6 +1,6 @@
 package com.gytisdev.bahometask
 
-import com.gytisdev.bahometask.application.common.ErrorHelper
+import com.gytisdev.bahometask.application.common.helpers.ErrorHelper
 import com.gytisdev.bahometask.application.common.Outcome
 import com.gytisdev.bahometask.application.common.OutcomeConverter
 import com.gytisdev.bahometask.application.common.TaskStatus

@@ -27,4 +27,9 @@ abstract class BaseActivity : AppCompatActivity(), CoroutineScope {
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         job = Job()
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        job.cancel()
+    }
 }

@@ -1,6 +1,6 @@
 package com.gytisdev.bahometask
 
-import com.gytisdev.bahometask.application.common.ImageUrlResolverHelper
+import com.gytisdev.bahometask.application.common.helpers.ImageUrlResolverHelper
 import org.junit.Test
 
 class ImageUrlResolverHelperTest {

@@ -2,7 +2,7 @@ package com.gytisdev.bahometask.application.storage
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.gytisdev.bahometask.postdetails.data.User
+import com.gytisdev.bahometask.postdetails.data.model.User
 
 @Entity(tableName = "users")
 data class DatabaseUser(
