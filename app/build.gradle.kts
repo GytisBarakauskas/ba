@@ -1,11 +1,11 @@
 plugins {
-    kotlin(BuildPlugins.kotlinAndroid)
-    kotlin(BuildPlugins.kotlinAndroidExtensions)
-    kotlin(BuildPlugins.kotlinSerialization) version kotlinSerializationVersion
     id(BuildPlugins.androidApplication)
     id(BuildPlugins.daggerHiltAndroid)
+    kotlin(BuildPlugins.kotlinAndroid)
+    kotlin(BuildPlugins.kotlinAndroidExtensions)
     id(BuildPlugins.kotlinKapt)
     id(BuildPlugins.kotlinSafeArgs)
+    kotlin(BuildPlugins.kotlinSerialization) version kotlinSerializationVersion
 }
 
 android {
@@ -43,7 +43,6 @@ android {
 
 dependencies {
     implementation(Dependencies.Kotlin.kotlinStdLib)
-    implementation(Dependencies.Google.materialDesign)
     implementation(Dependencies.AndroidX.appCompat)
     implementation(Dependencies.AndroidX.constraintLayout)
     implementation(Dependencies.AndroidX.coreKtx)
@@ -56,9 +55,14 @@ dependencies {
     implementation(Dependencies.Jetbrains.kotlinSerialization)
     implementation(Dependencies.AndroidX.room)
     implementation(Dependencies.AndroidX.roomKtx)
+    kapt(Dependencies.AndroidX.roomCompiler)
 
     // UI
+    implementation(Dependencies.Google.materialDesign)
     implementation(Dependencies.AndroidX.swipeRefreshLayout)
+    implementation(Dependencies.Misc.glide)
+    implementation(Dependencies.Misc.glideCompiler)
+    implementation(Dependencies.Misc.shimmer)
 
     // DI
     implementation(Dependencies.Google.daggerHilt)
@@ -66,5 +70,9 @@ dependencies {
 
     // Testing
     testImplementation(Dependencies.Test.jUnit)
+    testImplementation(Dependencies.Test.mockk)
+
     androidTestImplementation(Dependencies.Test.androidXjUnit)
+    androidTestImplementation(Dependencies.Test.mockkAndroid)
+    androidTestImplementation("androidx.arch.core:core-testing:2.1.0")
 }

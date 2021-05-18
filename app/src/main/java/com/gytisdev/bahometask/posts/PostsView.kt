@@ -4,18 +4,20 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.widget.FrameLayout
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.gytisdev.bahometask.application.common.AnimationHelper.createFadeInAnimation
+import com.gytisdev.bahometask.application.common.AnimationHelper.createFadeOutAnimation
 import com.gytisdev.bahometask.databinding.ViewPostsBinding
 import com.gytisdev.bahometask.posts.data.MainPostsAdapter
 import com.gytisdev.bahometask.posts.data.model.Post
 
-interface MainViewDelagate {
-    fun onItemSelected(id: String)
+interface MainViewDelegate {
+    fun onItemSelected(id: Int)
     fun onPullToRefresh()
 }
 
 class MainView(context: Context) : FrameLayout(context) {
 
-    var delegate: MainViewDelagate? = null
+    var delegate: MainViewDelegate? = null
 
     private var binding: ViewPostsBinding =
         ViewPostsBinding.inflate(LayoutInflater.from(context), this, true)
@@ -26,8 +28,28 @@ class MainView(context: Context) : FrameLayout(context) {
         setupView()
     }
 
+    fun setListItems(items: List<Post>) {
+        listAdapter.updateItems(items)
+    }
+
+    fun showLoading() {
+        binding.loadingView.startAnimation(createFadeInAnimation(onAnimationStart = {
+            binding.loadingView.visibility = VISIBLE
+        }))
+    }
+
+    fun stopLoading() {
+        binding.loadingView.startAnimation(createFadeOutAnimation(onAnimationEnd = {
+            binding.loadingView.visibility = GONE
+        }))
+    }
+
+    fun hideSwipeToRefreshLoader() {
+        binding.swipeRefresh.isRefreshing = false
+    }
+
     private fun setupView() {
-        listAdapter = MainPostsAdapter(emptyList()) {
+        listAdapter = MainPostsAdapter {
             delegate?.onItemSelected(it)
         }
         with(binding) {
@@ -38,18 +60,5 @@ class MainView(context: Context) : FrameLayout(context) {
                 delegate?.onPullToRefresh()
             }
         }
-    }
-
-    fun setListItems(items: List<Post>) {
-        listAdapter.updateItems(items)
-    }
-
-    fun showLoading() {
-        binding.loadingView.visibility = VISIBLE
-    }
-
-    fun stopLoading() {
-        binding.swipeRefresh.isRefreshing = false
-        binding.loadingView.visibility = GONE
     }
 }

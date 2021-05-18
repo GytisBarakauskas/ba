@@ -6,7 +6,7 @@
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.gytisdev.bahometask.posts.PostsFragment"
-        android:label="MainFragment" >
+        android:label="MainFragment">
         <action
             android:id="@+id/action_mainFragment_to_detailsFragment"
             app:destination="@id/detailsFragment"
@@ -18,9 +18,9 @@
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.gytisdev.bahometask.postdetails.PostDetailsFragment"
-        android:label="DetailsFragment" >
+        android:label="DetailsFragment">
         <argument
             android:name="postID"
-            app:argType="string" />
+            app:argType="integer" />
     </fragment>
 </navigation>

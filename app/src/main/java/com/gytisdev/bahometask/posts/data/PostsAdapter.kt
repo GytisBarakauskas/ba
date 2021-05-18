@@ -7,8 +7,8 @@ import com.gytisdev.bahometask.databinding.ItemPostHeaderBinding
 import com.gytisdev.bahometask.posts.data.model.Post
 
 class MainPostsAdapter(
-    var items: List<Post> = emptyList(),
-    val onItemSelected: (String) -> Unit
+    private var items: List<Post> = emptyList(),
+    val onItemSelected: (Int) -> Unit
 ) : RecyclerView.Adapter<MainPostsAdapter.PostHeaderViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostHeaderViewHolder {
         val binding = ItemPostHeaderBinding
@@ -16,7 +16,8 @@ class MainPostsAdapter(
         return PostHeaderViewHolder(binding)
     }
 
-    inner class PostHeaderViewHolder(val binding: ItemPostHeaderBinding): RecyclerView.ViewHolder(binding.root)
+    inner class PostHeaderViewHolder(val binding: ItemPostHeaderBinding) :
+        RecyclerView.ViewHolder(binding.root)
 
     override fun onBindViewHolder(holder: PostHeaderViewHolder, position: Int) {
         with(holder.binding) {

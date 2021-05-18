@@ -3,7 +3,7 @@ package com.gytisdev.bahometask.application.base
 import android.app.AlertDialog
 import androidx.fragment.app.Fragment
 
-abstract class BaseFragment: Fragment() {
+abstract class BaseFragment : Fragment() {
 
     fun showDialog(
         title: String,

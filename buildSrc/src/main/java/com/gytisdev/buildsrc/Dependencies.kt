@@ -4,7 +4,6 @@ const val kotlinVersion = "1.5.0"
 const val gradleVersion = "4.1.1"
 const val daggerHiltVersion = "2.35"
 const val kotlinSerializationVersion = "1.5.0"
-const val realmVersion = "10.4.0"
 
 object AndroidSDK {
     const val compileSdk = 30
@@ -83,6 +82,7 @@ object Dependencies {
         const val lifecycleLiveData = "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVersion"
         const val room = "androidx.room:room-runtime:$roomVersion"
         const val roomKtx = "androidx.room:room-ktx:$roomVersion"
+        const val roomCompiler = "androidx.room:room-compiler:$roomVersion"
     }
 
     object Google {
@@ -107,16 +107,24 @@ object Dependencies {
 
     object Misc {
         private const val retrofitKotlinSerializationConverterVersion = "0.8.0"
+        private const val glideVersion = "4.12.0"
+        private const val shimmerVersion = "0.5.0"
 
         const val retrofitKotlinSerializationConverter =
             "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:$retrofitKotlinSerializationConverterVersion"
+        const val glide = "com.github.bumptech.glide:glide:$glideVersion"
+        const val glideCompiler = "com.github.bumptech.glide:compiler:$glideVersion"
+        const val shimmer = "com.facebook.shimmer:shimmer:$shimmerVersion"
     }
 
     object Test {
         private const val jUnitVersion = "4.13.2"
         private const val androidXjUnitVersion = "1.1.2"
+        private const val mockkVersion = "1.10.6"
 
         const val jUnit = "junit:junit:${jUnitVersion}"
         const val androidXjUnit = "androidx.test.ext:junit:${androidXjUnitVersion}"
+        const val mockk = "io.mockk:mockk:$mockkVersion"
+        const val mockkAndroid = "io.mockk:mockk-android:$mockkVersion"
     }
 }

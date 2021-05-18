@@ -24,8 +24,8 @@ class MainActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         navigationController = (
-                supportFragmentManager
-                    .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+            supportFragmentManager
+                .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
             )
             .navController
         startListeningForRouteRequests()

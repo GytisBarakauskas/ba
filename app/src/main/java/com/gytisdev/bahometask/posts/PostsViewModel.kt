@@ -4,38 +4,41 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.gytisdev.bahometask.application.common.ErrorHelper
-import com.gytisdev.bahometask.application.common.LiveEvent
+import com.gytisdev.bahometask.application.common.OutcomeConverter
 import com.gytisdev.bahometask.application.common.TaskStatus
-import com.gytisdev.bahometask.application.common.launch
 import com.gytisdev.bahometask.posts.data.model.Post
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class PostsViewModel @Inject constructor(
     private val postsRepository: PostsRepository,
-    private val errorHelper: ErrorHelper
+    private val converter: OutcomeConverter,
+    private val postsRouter: PostsRouter
 ) : ViewModel() {
 
-    val loadPostsTask = LiveEvent<TaskStatus<List<Post>>>()
+    private val _posts = MutableLiveData<TaskStatus<List<Post>>>()
+    val posts: LiveData<TaskStatus<List<Post>>> = _posts
 
-    private val _posts = MutableLiveData<List<Post>>()
-    val posts: LiveData<List<Post>> = _posts
+    private var postsJob: Job? = null
 
-    fun initialize() {
-        refreshData()
+    fun fetchPosts(forceRefresh: Boolean = false) {
+        postsJob?.cancel()
+        postsJob = viewModelScope.launch {
+            postsRepository
+                .getPosts(forceRefresh)
+                .map { converter.toTaskStatusWithResolvedError(it) }
+                .collect {
+                    _posts.value = it
+                }
+        }
     }
 
-    fun refreshData() {
-        loadPostsTask.value = TaskStatus.loading(true)
-        viewModelScope.launch(work = {
-            postsRepository.getPosts()
-        }, onSuccess = {
-            loadPostsTask.value = TaskStatus.success()
-            _posts.value = it
-        }, onError = {
-            loadPostsTask.value = TaskStatus.failure(errorHelper.getErrorMessage(it))
-        })
+    fun onItemSelected(id: Int) {
+        postsRouter.openPostDetails(id)
     }
 }

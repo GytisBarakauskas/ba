@@ -7,16 +7,16 @@ import dagger.Provides
 import dagger.Reusable
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import retrofit2.Retrofit
 import kotlinx.serialization.json.Json
 import okhttp3.MediaType
+import retrofit2.Retrofit
 
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
     @Reusable
     @Provides
-    fun provideApiService() : PostsApiService {
+    fun provideApiService(): PostsApiService {
         val retrofit = Retrofit.Builder()
             .baseUrl("https://jsonplaceholder.typicode.com/")
             .addConverterFactory(
