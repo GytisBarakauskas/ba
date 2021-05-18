@@ -2,7 +2,6 @@ package com.gytisdev.bahometask
 
 import com.gytisdev.bahometask.application.networkBoundResource
 import com.gytisdev.bahometask.application.storage.DatabaseUser
-import com.gytisdev.bahometask.application.storage.toDomainModel
 import com.gytisdev.bahometask.network.models.NetworkUser
 import com.gytisdev.bahometask.postdetails.data.User
 import io.mockk.*
@@ -83,7 +82,7 @@ class NetworkBoundResourceTest {
             }
         )
 
-        flow.take(7).first()
+        flow.take(7).toList()
 
         coVerifySequence {
             holder.getQuery()

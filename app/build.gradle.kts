@@ -39,6 +39,11 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+        }
+    }
 }
 
 dependencies {
@@ -69,10 +74,12 @@ dependencies {
     kapt(Dependencies.Google.daggerHiltCompiler)
 
     // Testing
+    testImplementation(Dependencies.Test.roboelectric)
     testImplementation(Dependencies.Test.jUnit)
     testImplementation(Dependencies.Test.mockk)
-
-    androidTestImplementation(Dependencies.Test.androidXjUnit)
-    androidTestImplementation(Dependencies.Test.mockkAndroid)
-    androidTestImplementation("androidx.arch.core:core-testing:2.1.0")
+    testImplementation(Dependencies.Test.androidXCoreTesting)
+    testImplementation(Dependencies.Test.testRunner)
+    testImplementation(Dependencies.Test.androidXjUnit)
+    testImplementation(Dependencies.Test.mockkAndroid)
+    testImplementation(Dependencies.Test.kotlinCoroutinesTest)
 }

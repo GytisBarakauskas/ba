@@ -121,10 +121,18 @@ object Dependencies {
         private const val jUnitVersion = "4.13.2"
         private const val androidXjUnitVersion = "1.1.2"
         private const val mockkVersion = "1.10.6"
+        private const val testRunnerVersion = "1.3.0"
+        private const val androidXCoreTestingVersion = "2.1.0"
+        private const val roboelectricVersion = "4.4"
+        private const val kotlinCoroutinesTestVersion = "1.5.0"
 
         const val jUnit = "junit:junit:${jUnitVersion}"
         const val androidXjUnit = "androidx.test.ext:junit:${androidXjUnitVersion}"
         const val mockk = "io.mockk:mockk:$mockkVersion"
         const val mockkAndroid = "io.mockk:mockk-android:$mockkVersion"
+        const val testRunner = "androidx.test:runner:$testRunnerVersion"
+        const val androidXCoreTesting = "androidx.arch.core:core-testing:$androidXCoreTestingVersion"
+        const val roboelectric = "org.robolectric:robolectric:$roboelectricVersion"
+        const val kotlinCoroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlinCoroutinesTestVersion"
     }
 }

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.widget.FrameLayout
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.facebook.shimmer.ShimmerFrameLayout
 import com.gytisdev.bahometask.application.common.ImageUrlResolverHelper
 import com.gytisdev.bahometask.databinding.ViewPostDetailsBinding
@@ -37,6 +38,7 @@ class PostDetailsView(context: Context) : FrameLayout(context) {
             Glide
                 .with(this@PostDetailsView)
                 .load(ImageUrlResolverHelper.getUserAvatarUrl(user.id))
+                .diskCacheStrategy(DiskCacheStrategy.NONE) // seems user image changes on every request, so do not cache them
                 .placeholder(createPlaceholderDrawable())
                 .centerCrop()
                 .into(userAvatar)
